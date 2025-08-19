@@ -1,21 +1,21 @@
 let languages = prompt("Введите определенный код языка из: en,ru,de,fr,pt");
 switch (languages){
     case "en":
-        alert("Hello");
+        console.log("Hello");
         break;
     case "ru":
-        alert("Привет");
+        console.log("Привет");
         break;
     case "de":
-        alert("Hallo");
+        console.log("Hallo");
         break;
     case "fr":
-        alert("Bonjour");
+        console.log("Bonjour");
         break;
     case "pt":
-        alert("Olá");
+        console.log("Olá");
         break;
     default:
-        alert("Введен не верный код языка");
+        console.log("Введен не верный код языка");
         break;
 }
