@@ -1,18 +1,13 @@
-
 function crypto(password) {
-    const mid = Math.floor(password.length / 2);
+    const mid = password.length / 2;
     const firstHalf = password.slice(0, mid);
     const secondHalf = password.slice(mid);
-
-    return firstHalf.split('').reverse().join('') + secondHalf.split('').reverse().join('');
+    let result = firstHalf.split('').reverse().join('') + secondHalf.split('').reverse().join('');
+    return result.slice(0, result.length / 2) + result.split("")[result.length - 4] + result.split("")[result.length - 2] + result.split("")[result.length - 3] + result.split("")[result.length - 1];
 }
 
 function check(encrypted, original) {
-    const mid = Math.floor(encrypted.length / 2);
-    const firstHalf = encrypted.slice(0, mid);
-    const secondHalf = encrypted.slice(mid);
-
-    const decrypted = firstHalf.split('').reverse().join('') + secondHalf.split('').reverse().join('');
+    let decrypted = crypto(encrypted);
     return decrypted === original;
 }
 
